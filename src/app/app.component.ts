@@ -13,17 +13,17 @@ export class AppComponent {
   files1: TreeNode[] = [
     {
       label: 'test1',
-      data:{ icon:'pi pi-file' },
+      data:{ icon:'pi pi-file', goTo:2 },
       // icon: 'pi pi-file'
     },
     {
       label: 'test2',
-      data:{ icon:'pi pi-file' },
+      data:{ icon:'pi pi-file', goTo:1 },
       // icon: 'pi pi-file',
       children: [
         { 
           label: 'test2-1', 
-          data:{ icon:'pi pi-file' },
+          data:{ icon:'pi pi-file', goTo:2 },
           // icon: 'pi pi-file', 
         }
       ]

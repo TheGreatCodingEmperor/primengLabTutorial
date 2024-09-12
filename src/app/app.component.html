@@ -25,8 +25,8 @@
         <i [class]="node.data.icon" style="margin-left: .5rem;"></i>
         <b> {{node.label}} 123</b>
         <button pButton icon="pi pi-plus" label="add child" (click)="addNode(node)"></button>
-        <button pButton [label]="'Go To ' + (node.expanded?'test1':'test2')"
-          [routerLink]="node.expanded?'test1':'test2'"></button>
+        <button pButton [label]="'Go To ' + (node.data.goTo==2?'test2':'test1')"
+          [routerLink]="node.data.goTo==2?'test2':'test1'"></button>
       </ng-template>
     </p-tree>
     <router-outlet></router-outlet>
