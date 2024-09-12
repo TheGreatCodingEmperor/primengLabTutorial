@@ -1,0 +1,9 @@
+<p-tree [value]="files1" [filter]="true">
+  <ng-template let-node pTemplate="default">
+    <button *ngIf="node.children" class="p-ripple p-element p-tree-toggler" (click)="node.expanded=!node.expanded">
+      <i [class]="node.expanded?'pi pi-eye':'pi pi-eye-slash'"></i>
+    </button>
+    {{node.label}}
+  </ng-template>
+</p-tree>
+<button pButton icon="pi pi-plus" label="add node" (click)="addNode()"></button>

@@ -1,19 +1,15 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { TreeNode } from 'primeng/api';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'primeng-lab';
-  mode = 1;
-
+export class TestService {
   files1: TreeNode[] = [
     {
       label: 'test1',
       data:{ icon:'pi pi-file' },
+      key:'test1'
       // icon: 'pi pi-file'
     },
     {
@@ -29,14 +25,5 @@ export class AppComponent {
       ]
     },
   ];
-
-  addNode(node:TreeNode){
-    if(!node.children){
-      node.children = [];
-    }
-    node.children.push({
-      label:"test-child",
-      data:{icon:"pi pi-file"}
-    })
-  }
+  constructor() { }
 }
