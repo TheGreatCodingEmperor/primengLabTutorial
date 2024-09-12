@@ -9,28 +9,13 @@
       <b> {{node.label}} 123</b>
     </ng-template>
   </p-tree>
-  <router-outlet></router-outlet>
 </div>
 <button pButton label="範例1 router-outlet" (click)="mode = 1"></button>
 <button pButton label="範例2 service" (click)="mode = 2"></button>
 <div *ngIf="mode == 1">
   <!-- global tree 範例1 router-outlet，搭配 app-routing.module.ts children，把需要切換的頁面鑲嵌在router-outlet 保持 tree 在 global -->
-  <div style="display: flex;">
-    <p-tree [value]="files1" [filter]="true">
-      <ng-template let-node pTemplate="default">
-        <button *ngIf="node.children" class="p-ripple p-element p-tree-toggler" (click)="node.expanded=!node.expanded">
-          <i [class]="node.expanded?'pi pi-eye':'pi pi-eye-slash'"></i>
-        </button>
-
-        <i [class]="node.data.icon" style="margin-left: .5rem;"></i>
-        <b> {{node.label}} 123</b>
-        <button pButton icon="pi pi-plus" label="add child" (click)="addNode(node)"></button>
-        <button pButton [label]="'Go To ' + (node.data.goTo==2?'test2':'test1')"
-          [routerLink]="node.data.goTo==2?'test2':'test1'"></button>
-      </ng-template>
-    </p-tree>
-    <router-outlet></router-outlet>
-  </div>
+  <button pButton [label]="'Go To frame'" [routerLink]="'frame'"></button>
+  <router-outlet></router-outlet>
 </div>
 <div *ngIf="mode==2">
   <!-- 範例2 可以用下列按鈕隨意切換頁面 global-tree 頁面的 tree 內容異動會保留下來 test.service.ts-->

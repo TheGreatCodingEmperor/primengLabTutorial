@@ -9,13 +9,15 @@ import {TreeNode} from 'primeng/api';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
 import { GlobalTreeComponent } from './global-tree/global-tree.component';
+import { FrameComponent } from './frame/frame.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     Test2Component,
-    GlobalTreeComponent
+    GlobalTreeComponent,
+    FrameComponent
   ],
   imports: [
     TreeModule,

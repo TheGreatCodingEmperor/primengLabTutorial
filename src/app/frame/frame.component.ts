@@ -2,14 +2,11 @@ import { Component } from '@angular/core';
 import { TreeNode } from 'primeng/api';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-frame',
+  templateUrl: './frame.component.html',
+  styleUrls: ['./frame.component.scss']
 })
-export class AppComponent {
-  title = 'primeng-lab';
-  mode = 1;
-
+export class FrameComponent {
   files1: TreeNode[] = [
     {
       label: 'test1',
@@ -29,4 +26,14 @@ export class AppComponent {
       ]
     },
   ];
+
+  addNode(node:TreeNode){
+    if(!node.children){
+      node.children = [];
+    }
+    node.children.push({
+      label:"test-child",
+      data:{icon:"pi pi-file"}
+    })
+  }
 }
